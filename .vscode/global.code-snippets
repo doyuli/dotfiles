@@ -1,0 +1,98 @@
+{
+  "Print to console": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "log",
+    "body": [
+      "console.log($1);",
+      "$2"
+    ],
+    "description": "Log output to console"
+  },
+  "import": {
+    "scope": "javascript,typescript",
+    "prefix": "im",
+    "body": [
+      "import { $1 } from '$2';"
+    ],
+    "description": "Import a module"
+  },
+  "export-all": {
+    "scope": "javascript,typescript",
+    "prefix": "ex",
+    "body": [
+      "export * from '$2';"
+    ],
+    "description": "Export a module"
+  },
+  "vue-template-ref": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "utf",
+    "body": [
+      "const ${2:el} = useTemplateRef<HTMLDivElement>($1)",
+    ]
+  },
+  "vue-computed": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "com",
+    "body": [
+      "computed(() => { $1 })"
+    ]
+  },
+  "vue-watch-effect": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "we",
+    "body": [
+      "watchEffect(() => {",
+      " $1",
+      "})"
+    ]
+  },
+  "vue-script-setup": {
+    "scope": "vue",
+    "prefix": "vsc",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "import { ref } from 'vue'",
+      "",
+      "const props = defineProps<{",
+      " modelValue?: boolean,",
+      "}>()",
+      "$2",
+      "</script>",
+      "",
+      "<template>",
+      " <div>",
+      " <slot/>",
+      " </div>",
+      "</template>",
+      "",
+      "<style lang=\"${1:scss}\" scoped>",
+      "",
+      "</style>"
+    ]
+  },
+  "vue-temp-script": {
+    "scope": "vue",
+    "prefix": "vte",
+    "body": [
+      "<template>",
+      " <div>",
+      " <slot/>",
+      " </div>",
+      "</template>",
+      "",
+      "<script setup lang=\"ts\">",
+      "import { ref } from 'vue'",
+      "",
+      "const props = defineProps<{",
+      " modelValue?: boolean,",
+      "}>()",
+      "$2",
+      "</script>",
+      "",
+      "<style lang=\"${1:scss}\" scoped>",
+      "",
+      "</style>"
+    ],
+  },
+}
