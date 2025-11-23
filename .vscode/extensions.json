@@ -1,0 +1,28 @@
+{
+  "recommendations": [
+    // antfu extensions
+    "antfu.unocss",
+    "antfu.where-am-i",
+    "antfu.open-in-github-button",
+
+    // themes & icons
+    "zhuangtongfa.material-theme",
+    "antfu.icons-carbon",
+    "Catppuccin.catppuccin-vsc-icons",
+
+    // life savers!
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "Vue.volar",
+    "GitHub.copilot",
+    "streetsidesoftware.code-spell-checker",
+    "ms-ceintl.vscode-language-pack-zh-hans",
+
+    // up to you
+    "eamodio.gitlens",
+    "ritwickdey.liveserver",
+    "naumovs.color-highlight",
+    "techer.open-in-browser",
+    "chakrounanas.turbo-console-log",
+  ]
+}
