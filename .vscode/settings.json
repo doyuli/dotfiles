@@ -203,5 +203,4 @@
   ],
   // ========== Custom ==========
   "vue.autoInsert.dotValue": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
 }
