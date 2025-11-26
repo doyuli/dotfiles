@@ -14,6 +14,8 @@
   "workbench.colorTheme": "One Dark Pro",
   "oneDarkPro.italic": false,
   "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
   // ========== Editor ==========
   "debug.onTaskErrors": "debugAnyway",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -64,6 +66,7 @@
   },
   // ========== Git ==========
   "git.autofetch": true,
+  "git.confirmSync": false,
   "git.untrackedChanges": "separate",
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.enabled": false,
@@ -167,9 +170,38 @@
     "plaintext": false,
     "nextEditSuggestions": true
   },
+  // ========== Extensions ==========
+  "errorLens.enabledDiagnosticLevels": [
+    "warning",
+    "error"
+  ],
+  "errorLens.excludeBySource": [
+    "cSpell",
+    "Grammarly",
+    "eslint"
+  ],
+  "cSpell.allowCompoundWords": true,
+  "cSpell.language": "en,en-US",
+  "cSpell.userWords": [
+    "antfu",
+    "iconify",
+    "jsdom",
+    "pico",
+    "picocolors",
+    "pinia",
+    "rollup",
+    "shikijs",
+    "tinyglobby",
+    "tsdown",
+    "unocss",
+    "unplugin",
+    "vite",
+    "vitejs",
+    "vitepress",
+    "vitest",
+    "vueuse"
+  ],
   // ========== Custom ==========
   "vue.autoInsert.dotValue": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.allowCompoundWords": true,
-  "cSpell.language": "en,en-US",
 }

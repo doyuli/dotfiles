@@ -1,28 +1,31 @@
 {
-  "Print to console": {
-    "scope": "javascript,typescript,vue",
-    "prefix": "log",
-    "body": [
-      "console.log($1);",
-      "$2"
-    ],
-    "description": "Log output to console"
-  },
   "import": {
     "scope": "javascript,typescript",
     "prefix": "im",
     "body": [
-      "import { $1 } from '$2';"
+      "import { $2 } from '$1';"
     ],
     "description": "Import a module"
   },
-  "export-all": {
+  "export": {
     "scope": "javascript,typescript",
     "prefix": "ex",
     "body": [
-      "export * from '$2';"
+      "export { $2 } from '$1';"
     ],
     "description": "Export a module"
+  },
+  "export-all": {
+    "scope": "javascript,typescript",
+    "prefix": "exa",
+    "body": [
+      "export * from '$2';"
+    ],
+    "description": "Export all module"
+  },
+  "Destructure Object": {
+    "prefix": "cc",
+    "body": "const { $2 } = $1"
   },
   "vue-template-ref": {
     "scope": "javascript,typescript,vue",
@@ -49,26 +52,20 @@
   },
   "vue-script-setup": {
     "scope": "vue",
-    "prefix": "vsc",
+    "prefix": "<sc",
     "body": [
       "<script setup lang=\"ts\">",
-      "import { ref } from 'vue'",
-      "",
       "const props = defineProps<{",
-      " modelValue?: boolean,",
+      "  modelValue?: boolean,",
       "}>()",
-      "$2",
+      "$1",
       "</script>",
       "",
       "<template>",
-      " <div>",
-      " <slot/>",
-      " </div>",
-      "</template>",
-      "",
-      "<style lang=\"${1:scss}\" scoped>",
-      "",
-      "</style>"
+      "  <div>",
+      "    <slot/>",
+      "  </div>",
+      "</template>"
     ]
   },
   "vue-temp-script": {
@@ -76,23 +73,19 @@
     "prefix": "vte",
     "body": [
       "<template>",
-      " <div>",
-      " <slot/>",
-      " </div>",
+      "  <div>",
+      "    <slot/>",
+      "  </div>",
       "</template>",
       "",
       "<script setup lang=\"ts\">",
       "import { ref } from 'vue'",
       "",
       "const props = defineProps<{",
-      " modelValue?: boolean,",
+      "  modelValue?: boolean,",
       "}>()",
-      "$2",
+      "$1",
       "</script>",
-      "",
-      "<style lang=\"${1:scss}\" scoped>",
-      "",
-      "</style>"
     ],
   },
 }
