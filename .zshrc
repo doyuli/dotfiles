@@ -1,9 +1,7 @@
+source ~/.bash_profile
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
 
 # git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 # ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
