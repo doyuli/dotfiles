@@ -103,6 +103,14 @@ function dir() {
   mkdir $1 && cd $1
 }
 
+function clone() {
+  if [[ -z $2 ]] then
+    gcl "$@" && cd "$(basename "$1" .git)"
+  else
+    gcl "$@" && cd "$2"
+  fi
+}
+
 # Clone to ~/i and cd to it
 function clonei() {
   i && clone "$@" && code . && cd ~2
