@@ -24,6 +24,9 @@ source $ZSH/oh-my-zsh.sh
 # Git
 # -------------------------------- #
 
+# Go to project root
+alias grt='cd "$(git rev-parse --show-toplevel)"'
+
 alias gs='git status'
 alias gp='git push'
 alias gpf='git push --force'
@@ -79,6 +82,7 @@ function glp() {
 # `~/i` for my projects
 # `~/f` for forks
 # `~/r` for reproductions
+# `~/w` for works
 # -------------------------------- #
 
 function i() {
@@ -95,6 +99,14 @@ function f() {
 
 function w() {
   cd ~/works/$1
+}
+
+function pr() {
+  if [ $1 = "ls" ]; then
+    gh pr list
+  else
+    gh pr checkout $1
+  fi
 }
 
 function dir() {
@@ -115,15 +127,15 @@ function clonei() {
 }
 
 function cloner() {
-  repros && clone "$@" && code . && cd ~2
+  r && clone "$@" && code . && cd ~2
 }
 
 function clonef() {
-  forks && clone "$@" && code . && cd ~2
+  f && clone "$@" && code . && cd ~2
 }
 
 function clonew () {
-  works && clone "$@" && code . && cd ~2
+  w && clone "$@" && code . && cd ~2
 }
 
 function codei() {
