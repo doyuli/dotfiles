@@ -70,6 +70,7 @@ alias gx='git clean -df'
 alias gsha='git rev-parse HEAD | pbcopy'
 
 alias ghci='gh run list -L 1'
+alias ghc='gh repo clone'
 
 function glp() {
   git --no-pager log -$1
@@ -115,9 +116,9 @@ function dir() {
 
 function clone() {
   if [[ -z $2 ]] then
-    gcl "$@" && cd "$(basename "$1" .git)"
+    ghc "$@" && cd "$(basename "$1" .git)"
   else
-    gcl "$@" && cd "$2"
+    ghc "$@" && cd "$2"
   fi
 }
 
@@ -140,4 +141,52 @@ function clonew () {
 
 function codei() {
   i && code "$@" && cd -
+}
+
+# -------------------------------- #
+# Proxy
+# -------------------------------- #
+
+PROXY_ADDR="http://127.0.0.1:7897"
+
+export HTTP_PROXY=$PROXY_ADDR
+export HTTPS_PROXY=$PROXY_ADDR
+
+# proxy enable
+pen() {
+  git config --global http.proxy "$PROXY_ADDR"
+  git config --global https.proxy "$PROXY_ADDR"
+
+  echo "Proxy enabled → $PROXY_ADDR"
+}
+
+# proxy disable
+pdis() {
+  git config --global --unset http.proxy
+  git config --global --unset https.proxy
+
+  echo "Proxy disabled"
+}
+
+# proxy status
+psta() {
+  echo "Git HTTP Proxy: $(git config --global --get http.proxy)"
+  echo "Git HTTPS Proxy: $(git config --global --get https.proxy)"
+}
+
+# -------------------------------- #
+# npm registry
+# -------------------------------- #
+
+alias nsta='npm config get registry'
+
+# toggle registry
+nreg() {
+  local r="$(npm config get registry)"
+  if [[ $r == *npmmirror* ]]; then
+    r="https://registry.npmjs.org/"
+  else
+    r="https://registry.npmmirror.com/"
+  fi
+  npm config set registry "$r" && echo "npm registry → $r"
 }
