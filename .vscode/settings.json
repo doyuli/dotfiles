@@ -17,6 +17,7 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   // ========== Editor ==========
+  "emmet.triggerExpansionOnTab": true,
   "debug.onTaskErrors": "debugAnyway",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
