@@ -20,6 +20,9 @@ plugins=(
 # https://ohmyz.sh/
 source $ZSH/oh-my-zsh.sh
 
+# Homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # -------------------------------- #
 # Git
 # -------------------------------- #
@@ -115,10 +118,17 @@ function dir() {
 }
 
 function clone() {
-  if [[ -z $2 ]] then
-    ghc "$@" && cd "$(basename "$1" .git)"
+  local target_dir
+  if [[ -z "$2" ]]; then
+    target_dir="$(basename "$1" .git)"
   else
-    ghc "$@" && cd "$2"
+    target_dir="$2"
+  fi
+
+  if [[ "$1" =~ ^(https?://|git@|ssh://) ]]; then
+    gcl "$@" && cd "$target_dir"
+  else
+    ghc "$@" && cd "$target_dir"
   fi
 }
 
