@@ -7,15 +7,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ZSH_THEME="spaceship"
 
-# Enable lazy loading for NVM to speed up shell startup
-zstyle ':omz:plugins:nvm' lazy yes
+# Auto-load Node version via .nvmrc
+zstyle ':omz:plugins:nvm' autoload yes
 
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-# git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
 plugins=(
   git
-  zsh-z
   zsh-autosuggestions
   zsh-syntax-highlighting
   nvm
