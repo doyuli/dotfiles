@@ -20,6 +20,8 @@
     // up to you
     "antfu.where-am-i",
     "antfu.open-in-github-button",
+    "antfu.pnpm-catalog-lens",
+    "lokalise.i18n-ally",
     "eamodio.gitlens",
     "ritwickdey.liveserver",
     "naumovs.color-highlight",
