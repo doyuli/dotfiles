@@ -1,0 +1,46 @@
+# ============================================
+# Ghostty Terminal - Complete Configuration
+# ============================================
+
+# --- Typography ---
+font-family = "ComicShannsMono Nerd Font"
+font-family = "Maple Mono NF CN"
+font-size = 14
+font-thicken = true
+adjust-cell-width = -1
+adjust-cell-height = 3
+
+# --- Theme and Colors ---
+theme = Catppuccin Mocha
+selection-invert-fg-bg = true
+
+# --- Window and Appearance ---
+background-opacity = 0.9
+background-blur-radius = 70
+window-subtitle = working-directory
+window-padding-balance = true
+window-save-state = always
+window-theme = auto
+window-padding-x = 10
+window-padding-y = 8
+macos-titlebar-style = transparent
+
+# --- Cursor ---
+cursor-style = bar
+cursor-style-blink = true
+
+# --- Mouse ---
+mouse-hide-while-typing = true
+copy-on-select = clipboard
+
+# --- Security ---
+clipboard-paste-protection = true
+clipboard-paste-bracketed-safe = true
+clipboard-read = allow
+clipboard-write = allow
+
+# --- Shell Integration ---
+shell-integration = detect
+
+# --- Performance ---
+scrollback-limit = 800000
