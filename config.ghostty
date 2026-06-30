@@ -3,8 +3,8 @@
 # ============================================
 
 # --- Typography ---
-font-family = "ComicShannsMono Nerd Font"
-font-family = "Maple Mono NF CN"
+font-family = ComicShannsMono Nerd Font
+font-family = Hannotate SC
 font-size = 14
 font-thicken = true
 adjust-cell-width = -1
